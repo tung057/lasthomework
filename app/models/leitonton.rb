@@ -1,0 +1,2 @@
+class Leitonton < ApplicationRecord
+end

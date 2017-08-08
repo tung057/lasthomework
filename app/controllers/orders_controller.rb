@@ -72,3 +72,6 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:name, :phone, :description)
     end
 end
+
+
+# http://localhost:4000/rails/info/routes

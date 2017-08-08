@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
 
+
+
+<!-- <h1>Orders</h1> -->
+<%= render '/shared/title', title: 'test' %>
 <table>
   <thead>
     <tr>
@@ -18,9 +21,12 @@
         <td><%= order.name %></td>
         <td><%= order.phone %></td>
         <td><%= order.description %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', order, class: "btn btn-info" %></td>
+        <% if logged_in? %>
+        <td><%= link_to 'Edit', edit_order_path(order), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% end %>
+      
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +34,5 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_order_path, class: "btn btn-danger" %>
+<%= link_to 'order list', orders_path %>
